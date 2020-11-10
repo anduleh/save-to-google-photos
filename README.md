@@ -1,4 +1,6 @@
 # save-to-google-photos
 A lightweight and simple Chrome extension to save media to Google Photos 
 
-![Google Photos Header](google-photos-header.png)
+<p align="center">
+  <img src="google-photos-header.png" />
+</p>
