@@ -18,7 +18,7 @@ const saveToGooglePhotos = (info) => {
       return;
     }
 
-    // try saving the google photos
+    // try saving to google photos
     try {
       // set photo url
       let photoUrl = info.srcUrl;
@@ -29,10 +29,12 @@ const saveToGooglePhotos = (info) => {
       // upload photo with auth token and retry
       let uploadedPhoto = await uploadPhoto(photo, token, true);
 
+      // if successful, log it out
       console.log("Uploaded Photo: ", uploadedPhoto);
 
       // if getting or uploading photo errors out, just log it
     } catch (err) {
+      // if unsuccesful, log it out
       console.log("There was an error saving to Google Photos.");
       console.error(err);
     }
@@ -41,8 +43,11 @@ const saveToGooglePhotos = (info) => {
 
 // get photo needs to be XHR because fetch does not support local schema "file:////"
 getPhoto = (url) => {
+  // promisify the XHR
   return new Promise(function (resolve, reject) {
+    // initialize XHR
     var xhr = new XMLHttpRequest();
+    // set GET request on the media object
     xhr.open("GET", url);
 
     // ensure we are grabbing media blobs
@@ -105,9 +110,10 @@ uploadPhoto = async (photo, authToken, retry) => {
       );
       // else if the error is not 401, throw error
     } else {
+      // parse upload error has json, then throw it
       const errorResponse = await uploadResponse.json();
-      const message = `An upload error has occured: ${errorResponse}`;
-      throw new Error(message);
+      const errorMessage = `An upload error has occured: ${errorResponse}`;
+      throw new Error(errorMessage);
     }
   }
 
@@ -158,9 +164,10 @@ uploadPhoto = async (photo, authToken, retry) => {
       );
       // else if the error is not 401, throw error
     } else {
+      // parse media item error has json, then throw it
       const errorResponse = await mediaItemResponse.json();
-      const message = `A media item error has occured: ${errorResponse}`;
-      throw new Error(message);
+      const errorMessage = `A media item error has occured: ${errorResponse}`;
+      throw new Error(errorMessage);
     }
   }
 
