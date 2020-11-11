@@ -11,7 +11,7 @@ A simple and lightweight Chrome extension to save media directly into Google Pho
 2. Navigate to chrome://extensions/
 3. Select "Load unpacked"
 4. Select the specific folder
-5. Right-click on an image or video you want to save to Google Photos
+5. Right-click on an image or video that you want to save into Google Photos
 6. Select "Save to Google Photos"
 7. Done! Check out your uploaded image or video at [Google Photos](https://photos.google.com/)
 
