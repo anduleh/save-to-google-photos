@@ -1,5 +1,5 @@
 # Save to Google Photos 📷
-A lightweight and simple Chrome extension to save media to Google Photos!
+A simple and lightweight Chrome extension to save media to Google Photos!
 
 <br>
 <p align="center">
